@@ -19,6 +19,8 @@ function library:CreateWindow(name)
     topmenu.BorderSizePixel = 0
     topmenu.Position = UDim2.new(0.0350049995, 0, 0.0417207852, 0)
     topmenu.Size = UDim2.new(0, 484, 0, 34)
+    topmenu.Active = true
+    topmenu.Draggable = true
 
     container.Name = "container"
     container.Parent = topmenu
@@ -26,6 +28,8 @@ function library:CreateWindow(name)
     container.BorderSizePixel = 0
     container.Position = UDim2.new(0, 0, 0.977130115, 0)
     container.Size = UDim2.new(0, 484, 0, 223)
+    container.Active = true
+    container.Draggable = true
 
     insidecontainer.Name = "insidecontainer"
     insidecontainer.Parent = container
@@ -46,10 +50,12 @@ function library:CreateWindow(name)
     Title.Font = Enum.Font.SourceSans
     Title.TextColor3 = Color3.new(1, 1, 1)
     Title.TextSize = 25
+    Title.Text = name
 
     local MentalLibrary = {}
 
-    function MentalLibrary:CreateButton(text)
+    function MentalLibrary:CreateButton(text, callback)
+        local callback = callback or function() end
         local TextButton = Instance.new("TextButton")
 
         TextButton.Parent = insidecontainer
