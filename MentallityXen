@@ -1,5 +1,7 @@
 local library = {}
 
+local toggled = false
+
 function library:CreateWindow(name)
     local Design = Instance.new("ScreenGui")
     local topmenu = Instance.new("Frame")
@@ -7,6 +9,7 @@ function library:CreateWindow(name)
     local insidecontainer = Instance.new("Frame")
     local UIGridLayout = Instance.new("UIGridLayout")
     local Title = Instance.new("TextLabel")
+    local ToggleMenu = Instance.new("TextButton")
 
     Design.Name = "Design"
     Design.Parent = game.CoreGui
@@ -52,10 +55,36 @@ function library:CreateWindow(name)
     Title.TextSize = 25
     Title.Text = name
 
+    ToggleMenu.Name = "ToggleMenu"
+    ToggleMenu.Parent = topmenu
+    ToggleMenu.BackgroundColor3 = Color3.new(0, 1, 0)
+    ToggleMenu.BackgroundTransparency = 1
+    ToggleMenu.BorderSizePixel = 0
+    ToggleMenu.Position = UDim2.new(0.915289283, 0, -0.0294117648, 0)
+    ToggleMenu.Size = UDim2.new(0, 41, 0, 33)
+    ToggleMenu.Font = Enum.Font.SourceSans
+    ToggleMenu.Text = "V"
+    ToggleMenu.TextColor3 = Color3.new(1, 1, 1)
+    ToggleMenu.TextScaled = true
+    ToggleMenu.TextSize = 14
+    ToggleMenu.TextWrapped = true
+    ToggleMenu.MouseButton1Down:Connect(function()
+        if toggled then
+            toggled = false
+            container:TweenSize(UDim2.new(0, 484,0, 0), "InOut", "Linear", 0.1)
+            ToggleMenu.Rotation = 180
+        else
+            toggled = true
+            container:TweenSize(UDim2.new(0, 484,0, 223), "InOut", "Linear", 0.1)
+            ToggleMenu.Rotation = 0
+        end
+    end)
+
     local MentalLibrary = {}
 
     function MentalLibrary:CreateButton(text, callback)
         local callback = callback or function() end
+
         local TextButton = Instance.new("TextButton")
 
         TextButton.Parent = insidecontainer
@@ -69,6 +98,10 @@ function library:CreateWindow(name)
         TextButton.TextSize = 25
         TextButton.TextWrapped = true
         TextButton.Text = text
+
+        TextButton.MouseButton1Down:Connect(function()
+            pcall(callback)
+        end)
     end
     return MentalLibrary
 end
