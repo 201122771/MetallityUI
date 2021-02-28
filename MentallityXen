@@ -1,7 +1,5 @@
 local library = {}
 
-library:CreateWindow("")
-
 function library:CreateWindow(name)
     local Design = Instance.new("ScreenGui")
     local GradientOutline = Instance.new("Frame")
