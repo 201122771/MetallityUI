@@ -32,8 +32,6 @@ function library:CreateWindow(name)
     container.Position = UDim2.new(0, 0, 0.977130115, 0)
     container.Size = UDim2.new(0, 484, 0, 223)
     container.ClipsDescendants = true
-    container.Active = true
-    container.Draggable = true
 
     insidecontainer.Name = "insidecontainer"
     insidecontainer.Parent = container
@@ -122,7 +120,7 @@ function library:CreateWindow(name)
         Toggle.Position = UDim2.new(0.334047109, 0, 0, 0)
         Toggle.Size = UDim2.new(0, 149, 0, 32)
         Toggle.Font = Enum.Font.SourceSans
-        Toggle.Text = "Toggle"
+        Toggle.Text = text
         Toggle.TextColor3 = Color3.new(1, 1, 1)
         Toggle.TextSize = 25
         Toggle.TextWrapped = true
