@@ -1,0 +1,74 @@
+local library = {}
+
+library:CreateWindow("")
+
+function library:CreateWindow(name)
+    local Design = Instance.new("ScreenGui")
+    local GradientOutline = Instance.new("Frame")
+    local topmenu = Instance.new("Frame")
+    local Title = Instance.new("TextLabel")
+    local container = Instance.new("Frame")
+    local UIGridLayout = Instance.new("UIGridLayout")
+
+    Design.Name = "Design"
+    Design.Parent = game.CoreGui
+    Design.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+    GradientOutline.Name = "GradientOutline"
+    GradientOutline.Parent = Design
+    GradientOutline.BackgroundColor3 = Color3.new(1, 1, 1)
+    GradientOutline.BorderColor3 = Color3.new(0.105882, 0.164706, 0.207843)
+    GradientOutline.BorderSizePixel = 0
+    GradientOutline.Position = UDim2.new(0.0488749444, 0, 0.272833735, 0)
+    GradientOutline.Size = UDim2.new(0, 478, 0, 467)
+
+    topmenu.Name = "topmenu"
+    topmenu.Parent = GradientOutline
+    topmenu.BackgroundColor3 = Color3.new(0.219608, 0.219608, 0.219608)
+    topmenu.BorderSizePixel = 0
+    topmenu.Position = UDim2.new(0.0183486231, 0, 0.0171306208, 0)
+    topmenu.Size = UDim2.new(0, 461, 0, 25)
+
+    Title.Name = "Title"
+    Title.Parent = topmenu
+    Title.BackgroundColor3 = Color3.new(1, 1, 1)
+    Title.BackgroundTransparency = 1
+    Title.Position = UDim2.new(0.079303734, 0, 0, 0)
+    Title.Size = UDim2.new(0, 380, 0, 25)
+    Title.Font = Enum.Font.SourceSans
+    Title.TextColor3 = Color3.new(1, 1, 1)
+    Title.TextSize = 18
+
+    container.Name = "container"
+    container.Parent = topmenu
+    container.BackgroundColor3 = Color3.new(0.298039, 0.298039, 0.298039)
+    container.BorderSizePixel = 0
+    container.Position = UDim2.new(-0.000993706519, 0, 0.977130115, 0)
+    container.Size = UDim2.new(0, 461, 0, 425)
+
+    UIGridLayout.Parent = container
+    UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+    UIGridLayout.CellSize = UDim2.new(0, 150, 0, 30)
+
+    local MentalLibrary = {}
+
+    function MentalLibrary:CreateButton(text)
+        local TextButton = Instance.new("TextButton")
+
+        TextButton.Parent = container
+        TextButton.BackgroundColor3 = Color3.new(0.0705882, 0.941177, 0.0588235)
+        TextButton.BorderColor3 = Color3.new(1, 1, 1)
+        TextButton.BorderSizePixel = 0
+        TextButton.Position = UDim2.new(0.046421662, 0, 0.0541176461, 0)
+        TextButton.Size = UDim2.new(0, 167, 0, 46)
+        TextButton.Font = Enum.Font.SourceSans
+        TextButton.TextColor3 = Color3.new(1, 1, 1)
+        TextButton.TextSize = 25
+        TextButton.TextWrapped = true
+        TextButton.Text = text
+
+    end
+    return MentalLibrary
+end
+
+return library
