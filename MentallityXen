@@ -31,9 +31,9 @@ function library:CreateWindow(name)
     container.BorderSizePixel = 0
     container.Position = UDim2.new(0, 0, 0.977130115, 0)
     container.Size = UDim2.new(0, 484, 0, 223)
+    container.ClipsDescendants = true
     container.Active = true
     container.Draggable = true
-    container.ClipsDescendants = true
 
     insidecontainer.Name = "insidecontainer"
     insidecontainer.Parent = container
