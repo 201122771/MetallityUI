@@ -233,3 +233,5 @@ function library:CreateWindow(name)
 	end
 	return MentalLibrary
 end
+
+return library
