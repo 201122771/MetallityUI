@@ -1,0 +1,245 @@
+local library = {}
+
+local toggled = false
+
+function library:CreateWindow(name)
+	local Design = Instance.new("ScreenGui")
+	local topmenu = Instance.new("Frame")
+	local Title = Instance.new("TextLabel")
+	local pageselection = Instance.new("Frame")
+	local UIGridLayout = Instance.new("UIGridLayout")
+	local containers = Instance.new("Frame")
+	local container = Instance.new("Frame")
+	local insidecontainer = Instance.new("Frame")
+	local UIGridLayout_2 = Instance.new("UIGridLayout")
+	local ToggleMenu = Instance.new("TextButton")
+	
+	Design.Name = "Design"
+	Design.Parent = game.CoreGui
+	Design.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	topmenu.Name = "topmenu"
+	topmenu.Parent = Design
+	topmenu.BackgroundColor3 = Color3.new(0.207843, 0.207843, 0.207843)
+	topmenu.BorderColor3 = Color3.new(1, 0.25098, 0.964706)
+	topmenu.BorderSizePixel = 0
+	topmenu.Position = UDim2.new(0.317546666, 0, 0.479659915, 0)
+	topmenu.Size = UDim2.new(0, 589, 0, 34)
+
+	Title.Name = "Title"
+	Title.Parent = topmenu
+	Title.BackgroundColor3 = Color3.new(1, 1, 1)
+	Title.BackgroundTransparency = 1
+	Title.Position = UDim2.new(-0.000419383927, 0, -0.0105887018, 0)
+	Title.Size = UDim2.new(0, 171, 0, 34)
+	Title.Font = Enum.Font.SourceSans
+	Title.TextColor3 = Color3.new(1, 1, 1)
+	Title.TextSize = 25
+	Title.TextWrapped = true
+	Title.Text = text
+
+	pageselection.Name = "pageselection"
+	pageselection.Parent = topmenu
+	pageselection.BackgroundColor3 = Color3.new(0.227451, 0.227451, 0.227451)
+	pageselection.BorderSizePixel = 0
+	pageselection.ClipsDescendants = true
+	pageselection.Position = UDim2.new(0, 0, 1, 0)
+	pageselection.Size = UDim2.new(0, 171, 0, 311)
+	
+	UIGridLayout.Parent = pageselection
+	UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	UIGridLayout.CellSize = UDim2.new(0, 170, 0, 25)
+	
+	containers.Name = "containers"
+	containers.Parent = topmenu
+	containers.BackgroundColor3 = Color3.new(1, 1, 1)
+	containers.BackgroundTransparency = 1
+	containers.BorderSizePixel = 0
+	containers.ClipsDescendants = true
+	containers.Position = UDim2.new(0.289830506, 0, 1, 0)
+	containers.Size = UDim2.new(0, 419, 0, 311)
+
+	container.Name = "container"
+	container.Parent = containers
+	container.BackgroundColor3 = Color3.new(0.329412, 0.329412, 0.329412)
+	container.BorderSizePixel = 0
+	container.ClipsDescendants = true
+	container.Position = UDim2.new(-0.00138661964, 0, -0.000836044259, 0)
+	container.Size = UDim2.new(0, 419, 0, 311)
+
+	insidecontainer.Name = "insidecontainer"
+	insidecontainer.Parent = container
+	insidecontainer.BackgroundColor3 = Color3.new(1, 1, 1)
+	insidecontainer.BackgroundTransparency = 1
+	insidecontainer.Position = UDim2.new(0.0286396183, 0, 0.0385852084, 0)
+	insidecontainer.Size = UDim2.new(0, 398, 0, 285)
+
+	UIGridLayout_2.Parent = insidecontainer
+	UIGridLayout_2.SortOrder = Enum.SortOrder.LayoutOrder
+	UIGridLayout_2.CellSize = UDim2.new(0, 125, 0, 32)
+	
+	ToggleMenu.Name = "ToggleMenu"
+	ToggleMenu.Parent = topmenu
+	ToggleMenu.BackgroundColor3 = Color3.new(0, 1, 0)
+	ToggleMenu.BackgroundTransparency = 1
+	ToggleMenu.BorderSizePixel = 0
+	ToggleMenu.Position = UDim2.new(0.928848743, 0, -0.0294117648, 0)
+	ToggleMenu.Size = UDim2.new(0, 41, 0, 33)
+	ToggleMenu.Font = Enum.Font.SourceSans
+	ToggleMenu.Text = "V"
+	ToggleMenu.TextColor3 = Color3.new(1, 1, 1)
+	ToggleMenu.TextScaled = true
+	ToggleMenu.TextSize = 14
+	ToggleMenu.TextWrapped = true
+	ToggleMenu.MouseButton1Down:Connect(function()
+		if toggled then
+			toggled = false
+			containers:TweenSize(UDim2.new(0, 419,0, 0), "InOut", "Linear", 0.1)
+			ToggleMenu.Rotation = 180
+		else
+			toggled = true
+			containers:TweenSize(UDim2.new(0, 419,0, 311), "InOut", "Linear", 0.1)
+			ToggleMenu.Rotation = 0
+		end
+		
+		if toggled then
+			toggled = false
+			pageselection:TweenSize(UDim2.new(0, 171,0, 0), "InOut", "Linear", 0.1)
+			ToggleMenu.Rotation = 180
+		else
+			toggled = true
+			pageselection:TweenSize(UDim2.new(0, 171,0, 311), "InOut", "Linear", 0.1)
+			ToggleMenu.Rotation = 0
+		end
+		
+	end)
+	
+	local MentalLibrary = {}
+	
+	function MentalLibrary:CreateButton(text, callback)
+		local callback = callback or function() end
+		
+		local TextButton = Instance.new("TextButton")
+		
+		TextButton.Parent = insidecontainer
+		TextButton.BackgroundColor3 = Color3.new(0.227451, 0.227451, 0.227451)
+		TextButton.BorderColor3 = Color3.new(1, 1, 1)
+		TextButton.Size = UDim2.new(0, 200, 0, 50)
+		TextButton.Font = Enum.Font.SourceSans
+		TextButton.Text = text
+		TextButton.TextColor3 = Color3.new(1, 1, 1)
+		TextButton.TextSize = 20
+		TextButton.TextWrapped = true
+		
+		TextButton.MouseButton1Down:Connect(function()
+			pcall(callback)
+		end)
+	end
+	
+	function MentalLibrary:CreateToggle(text, callback)
+		local actions = {}
+		local enabled = false
+
+		text = text or "New Toggle"
+		callback = callback or function() end
+		
+		local Toggle = Instance.new("TextLabel")
+		local Background = Instance.new("TextButton")
+		local OnOffToggle = Instance.new("TextButton")
+		
+		Toggle.Name = "Toggle"
+		Toggle.Parent = insidecontainer
+		Toggle.BackgroundColor3 = Color3.new(0.227451, 0.227451, 0.227451)
+		Toggle.BorderColor3 = Color3.new(1, 1, 1)
+		Toggle.Position = UDim2.new(0.334047109, 0, 0, 0)
+		Toggle.Size = UDim2.new(0, 149, 0, 32)
+		Toggle.Font = Enum.Font.SourceSans
+		Toggle.Text = text
+		Toggle.TextColor3 = Color3.new(1, 1, 1)
+		Toggle.TextSize = 25
+		Toggle.TextWrapped = true
+		
+		Background.Name = "Background"
+		Background.Parent = Toggle
+		Background.BackgroundColor3 = Color3.new(0.168627, 0.168627, 0.168627)
+		Background.Position = UDim2.new(0.773333311, 0, 0.1875, 0)
+		Background.Size = UDim2.new(0, 27, 0, 20)
+		Background.Font = Enum.Font.SourceSans
+		Background.Text = ""
+		Background.TextColor3 = Color3.new(0, 0, 0)
+		Background.TextSize = 14
+		
+		OnOffToggle.Name = "OnOffToggle"
+		OnOffToggle.Parent = Background
+		OnOffToggle.BackgroundColor3 = Color3.new(0.807843, 0, 0)
+		OnOffToggle.BorderSizePixel = 0
+		OnOffToggle.Position = UDim2.new(0.629629612, 0, 0, 0)
+		OnOffToggle.Size = UDim2.new(0, 10, 0, 20)
+		OnOffToggle.Font = Enum.Font.SourceSans
+		OnOffToggle.Text = ""
+		OnOffToggle.TextColor3 = Color3.new(0, 0, 0)
+		OnOffToggle.TextSize = 14
+		
+		local function Fire()
+			enabled = not enabled
+			OnOffToggle:TweenPosition(enabled and UDim2.new(0, 0,0, 0) or UDim2.new(0.63, 0,0, 0), "InOut", "Linear", 0.1)
+			OnOffToggle.BackgroundColor3 = enabled and Color3.fromRGB(77, 202, 82) or Color3.fromRGB(206, 0, 0)
+			pcall(callback, enabled)
+		end
+
+		OnOffToggle.MouseButton1Click:connect(Fire)
+
+		function actions:Set(arg)
+			OnOffToggle:TweenPosition(enabled and UDim2.new(0, 0,0, 0) or UDim2.new(0.63, 0,0, 0), "InOut", "Linear", 0.1)
+			OnOffToggle.BackgroundColor3 = enabled and Color3.fromRGB(77, 202, 82) or Color3.fromRGB(206, 0, 0)
+			pcall(callback, arg)
+		end
+		
+		function MentalLibrary:CreateTab(text)
+			local TabButton = Instance.new("TextButton")
+			local container2 = Instance.new("Frame")
+			local insidecontainer2 = Instance.new("Frame")
+			local UIGridLayout2 = Instance.new("UIGridLayout")
+			
+			TabButton.Name = text.." Button"
+			TabButton.Parent = pageselection
+			TabButton.BackgroundColor3 = Color3.new(0.329412, 0.329412, 0.329412)
+			TabButton.BackgroundTransparency = 1
+			TabButton.BorderSizePixel = 0
+			TabButton.Size = UDim2.new(0, 170, 0, 26)
+			TabButton.Font = Enum.Font.SourceSansLight
+			TabButton.Text = text
+			TabButton.TextColor3 = Color3.new(1, 1, 1)
+			TabButton.TextSize = 20
+			
+			container2.Name = text.." container"
+			container2.Parent = containers
+			container2.BackgroundColor3 = Color3.new(0.329412, 0.329412, 0.329412)
+			container2.BorderSizePixel = 0
+			container2.ClipsDescendants = true
+			container2.Position = UDim2.new(-0.00138661964, 0, -0.000836044259, 0)
+			container2.Size = UDim2.new(0, 419, 0, 311)
+			
+			insidecontainer.Name = "insidecontainer"
+			insidecontainer.Parent = container2
+			insidecontainer.BackgroundColor3 = Color3.new(1, 1, 1)
+			insidecontainer.BackgroundTransparency = 1
+			insidecontainer.Position = UDim2.new(0.0286396183, 0, 0.0385852084, 0)
+			insidecontainer.Size = UDim2.new(0, 398, 0, 285)
+			
+			UIGridLayout.Parent = insidecontainer
+			UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+			UIGridLayout.CellSize = UDim2.new(0, 125, 0, 32)
+			
+			TabButton.MouseButton1Click:Connect(function()
+				for i, v in next, containers:GetChildren() do
+					v.Visible = false
+				end
+				container2.Visible = true
+				print(Container2.Name)
+			end)
+		end
+	return MentalLibrary
+end
+		
+return library
