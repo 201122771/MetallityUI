@@ -25,6 +25,8 @@ function library:CreateWindow(name)
 	topmenu.BorderSizePixel = 0
 	topmenu.Position = UDim2.new(0.317546666, 0, 0.479659915, 0)
 	topmenu.Size = UDim2.new(0, 589, 0, 34)
+	topmenu.Active = true
+	topmenu.Draggable = true
 
 	Title.Name = "Title"
 	Title.Parent = topmenu
