@@ -194,6 +194,7 @@ function library:CreateWindow(name)
 			OnOffToggle.BackgroundColor3 = enabled and Color3.fromRGB(77, 202, 82) or Color3.fromRGB(206, 0, 0)
 			pcall(callback, arg)
 		end
+		end
 		
 		function MentalLibrary:CreateTab(text)
 			local TabButton = Instance.new("TextButton")
@@ -238,7 +239,6 @@ function library:CreateWindow(name)
 				container2.Visible = true
 				print(Container2.Name)
 			end)
-		end
 	end
 	return MentalLibrary
 end
