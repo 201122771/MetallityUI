@@ -239,7 +239,7 @@ function library:CreateWindow(name)
 				print(Container2.Name)
 			end)
 		end
+	end
 	return MentalLibrary
 end
-		
-return library
+
