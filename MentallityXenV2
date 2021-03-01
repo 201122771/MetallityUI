@@ -13,8 +13,9 @@ function library:CreateWindow(name)
 	local insidecontainer = Instance.new("Frame")
 	local UIGridLayout_2 = Instance.new("UIGridLayout")
 	local ToggleMenu = Instance.new("TextButton")
+	local DestroyMenu = Instance.new("TextButton")
 
-	Design.Name = "Design"
+	Design.Name = "ClientUI"
 	Design.Parent = game.CoreGui
 	Design.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
@@ -27,7 +28,7 @@ function library:CreateWindow(name)
 	topmenu.Size = UDim2.new(0, 589, 0, 34)
 	topmenu.Active = true
 	topmenu.Draggable = true
-
+	
 	Title.Name = "Title"
 	Title.Parent = topmenu
 	Title.BackgroundColor3 = Color3.new(1, 1, 1)
@@ -105,6 +106,26 @@ function library:CreateWindow(name)
 			ToggleMenu.Rotation = 0
 		end
 	end)
+	
+	DestroyMenu.Name = "DestroyMenu"
+	DestroyMenu.Parent = topmenu
+	DestroyMenu.BackgroundColor3 = Color3.new(0, 1, 0)
+	DestroyMenu.BackgroundTransparency = 1
+	DestroyMenu.BorderSizePixel = 0
+	DestroyMenu.Position = UDim2.new(0.875, 0,-0.029, 0)
+	DestroyMenu.Size = UDim2.new(0, 41, 0, 33)
+	DestroyMenu.Font = Enum.Font.SourceSans
+	DestroyMenu.Text = "X"
+	DestroyMenu.TextColor3 = Color3.new(1, 1, 1)
+	DestroyMenu.TextScaled = true
+	DestroyMenu.TextSize = 14
+	DestroyMenu.TextWrapped = true
+	DestroyMenu.MouseButton1Down:Connect(function()
+	    containers:TweenSize(UDim2.new(0, 419,0, 0), "InOut", "Linear", 0.1)
+		pageselection:TweenSize(UDim2.new(0, 171,0, 0), "InOut", "Linear", 0.1)
+		wait(.1)
+        game.CoreGui.ClientUI:Destroy()
+	end)
 
 	local MentalLibrary = {}
 
@@ -148,7 +169,7 @@ function library:CreateWindow(name)
 		Toggle.Font = Enum.Font.SourceSans
 		Toggle.Text = text
 		Toggle.TextColor3 = Color3.new(1, 1, 1)
-		Toggle.TextSize = 25
+		Toggle.TextSize = 20
 		Toggle.TextWrapped = true
 
 		Background.Name = "Background"
@@ -213,12 +234,12 @@ function library:CreateWindow(name)
 		container2.Position = UDim2.new(-0.00138661964, 0, -0.000836044259, 0)
 		container2.Size = UDim2.new(0, 419, 0, 311)
 
-		insidecontainer.Name = "insidecontainer"
-		insidecontainer.Parent = container2
-		insidecontainer.BackgroundColor3 = Color3.new(1, 1, 1)
-		insidecontainer.BackgroundTransparency = 1
-		insidecontainer.Position = UDim2.new(0.0286396183, 0, 0.0385852084, 0)
-		insidecontainer.Size = UDim2.new(0, 398, 0, 285)
+		insidecontainer2.Name = "insidecontainer2"
+		insidecontainer2.Parent = container2
+		insidecontainer2.BackgroundColor3 = Color3.new(1, 1, 1)
+		insidecontainer2.BackgroundTransparency = 1
+		insidecontainer2.Position = UDim2.new(0.0286396183, 0, 0.0385852084, 0)
+		insidecontainer2.Size = UDim2.new(0, 398, 0, 285)
 
 		UIGridLayout2.Parent = insidecontainer
 		UIGridLayout2.SortOrder = Enum.SortOrder.LayoutOrder
@@ -230,6 +251,20 @@ function library:CreateWindow(name)
 			end	
 			container2.Visible = true
 		end)
+	end
+
+	function MentalLibrary:CreateLabel(text)
+		local TextLabel = Instance.new("TextLabel")
+
+		TextLabel.Parent = insidecontainer
+		TextLabel.BackgroundColor3 = Color3.new(0.227451, 0.227451, 0.227451)
+		TextLabel.BackgroundTransparency = 1
+		TextLabel.BorderColor3 = Color3.new(1, 1, 1)
+		TextLabel.Size = UDim2.new(0, 200, 0, 50)
+		TextLabel.Font = Enum.Font.SourceSans
+		TextLabel.TextColor3 = Color3.new(1, 1, 1)
+		TextLabel.TextSize = 20
+		TextLabel.Text = text
 	end
 	return MentalLibrary
 end
