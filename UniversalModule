@@ -1,0 +1,254 @@
+local toggled = false
+local player = game.Players.LocalPlayer
+local mouse = player:GetMouse()
+noclip = false
+
+local Universal = Instance.new("ScreenGui")
+local Container = Instance.new("Frame")
+local TextLabel = Instance.new("TextLabel")
+local account_box = Instance.new("ImageButton")
+local UIGradient = Instance.new("UIGradient")
+local InsideContainer = Instance.new("Frame")
+local TextButton1 = Instance.new("TextButton")
+local UIGridLayout = Instance.new("UIGridLayout")
+local TextButton2 = Instance.new("TextButton")
+local TextButton4 = Instance.new("TextButton")
+local Toggle = Instance.new("TextLabel")
+local ToggleBackground = Instance.new("TextButton")
+local ToggleButton = Instance.new("TextButton")
+local ToggleMenu = Instance.new("TextButton")
+local DestroyMenu = Instance.new("TextButton")
+
+Universal.Name = "Universal"
+Universal.Parent = game.CoreGui
+Universal.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Container.Name = "Container"
+Container.Parent = Universal
+Container.BackgroundColor3 = Color3.fromRGB(74, 74, 74)
+Container.BorderColor3 = Color3.fromRGB(23, 255, 50)
+Container.Position = UDim2.new(0.0154226031, 0, 0.326697886, 0)
+Container.Size = UDim2.new(0, 615, 0, 295)
+Container.Active = true
+Container.Draggable = true
+
+TextLabel.Parent = Container
+TextLabel.BackgroundColor3 = Color3.fromRGB(59, 59, 59)
+TextLabel.BorderColor3 = Color3.fromRGB(23, 255, 50)
+TextLabel.Size = UDim2.new(0, 615, 0, 50)
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.Text = "Mentallity; Universal GUI"
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.TextSize = 30.000
+
+account_box.Name = "account_box"
+account_box.Parent = TextLabel
+account_box.BackgroundTransparency = 1.000
+account_box.LayoutOrder = 4
+account_box.Position = UDim2.new(0.0104913674, 0, 0.113723665, 0)
+account_box.Size = UDim2.new(0, 39, 0, 38)
+account_box.ZIndex = 2
+account_box.Image = "rbxassetid://3926307971"
+account_box.ImageRectOffset = Vector2.new(124, 44)
+account_box.ImageRectSize = Vector2.new(36, 36)
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(30, 209, 114)), ColorSequenceKeypoint.new(0.58, Color3.fromRGB(137, 208, 88)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(240, 208, 65))}
+UIGradient.Parent = account_box
+
+InsideContainer.Name = "InsideContainer"
+InsideContainer.Parent = Container
+InsideContainer.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
+InsideContainer.BackgroundTransparency = 1.000
+InsideContainer.Position = UDim2.new(0.00975608546, 0, 0.203389823, 0)
+InsideContainer.Size = UDim2.new(0, 602, 0, 227)
+
+TextButton1.Name = "TextButton1"
+TextButton1.Parent = InsideContainer
+TextButton1.BackgroundColor3 = Color3.fromRGB(91, 91, 91)
+TextButton1.BorderColor3 = Color3.fromRGB(23, 255, 50)
+TextButton1.Size = UDim2.new(0, 200, 0, 50)
+TextButton1.Font = Enum.Font.SourceSans
+TextButton1.Text = "Load ESP"
+TextButton1.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton1.TextSize = 20.000
+TextButton1.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/MetallityUI/main/Main%20ESP"))()
+end)
+
+UIGridLayout.Parent = InsideContainer
+UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIGridLayout.CellSize = UDim2.new(0, 140, 0, 40)
+
+TextButton2.Name = "TextButton2"
+TextButton2.Parent = InsideContainer
+TextButton2.BackgroundColor3 = Color3.fromRGB(91, 91, 91)
+TextButton2.BorderColor3 = Color3.fromRGB(23, 255, 50)
+TextButton2.Size = UDim2.new(0, 200, 0, 50)
+TextButton2.Font = Enum.Font.SourceSans
+TextButton2.Text = "Aimbot"
+TextButton2.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton2.TextSize = 20.000
+TextButton2.MouseButton1Down:Connect(function()
+	local plr = game.Players.LocalPlayer
+	local camera = game.Workspace.CurrentCamera
+	local UIS = game.UserInputService
+	local mouse = plr:GetMouse()
+	local LOCKON = "Head"
+	_G.aim = false
+
+	UIS.InputBegan:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton2 then
+			_G.aim = true
+		end
+	end)
+
+	UIS.InputEnded:Connect(function(input)
+		if input.UserInputType == Enum.UserInputType.MouseButton2 then
+			_G.aim = false
+		end
+	end)
+
+	local FOV = Drawing.new("Circle")
+	FOV.Visible = true
+	FOV.Color = Color3.fromRGB(30, 255, 0)
+	FOV.Thickness = 2
+	FOV.NumSides = 100
+	FOV.Radius = 125
+	FOV.Filled = false
+
+	game:GetService("RunService").RenderStepped:Connect(function()
+		local closest = nil
+		local min = math.huge
+		FOV.Position = Vector2.new(camera.ViewportSize.X/2, camera.ViewportSize.Y/2)
+		if _G.aim == true then
+			for i, v in pairs(game.Players:GetChildren()) do
+				if v.TeamColor ~= plr.TeamColor then
+					if game.Players:FindFirstChild(v.Name) and v.Character ~= nil and v.Character:FindFirstChild("Humanoid") ~= nil and v.Character:FindFirstChild("HumanoidRootPart") ~= nil and v.Name ~= plr.Name  and v.Character.Humanoid.Health > 0 then
+						local plrpos, OnScreen = camera:WorldToViewportPoint(v.Character[LOCKON].Position)
+						if OnScreen then
+							local distance = math.sqrt(math.pow(mouse.X - plrpos.X, 2), math.pow(mouse.Y - plrpos.Y, 2))
+							local fovdistance = math.sqrt(math.pow(FOV.Position.X - plrpos.X, 2) + math.pow(FOV.Position.Y - plrpos.Y, 2))
+							if fovdistance <= FOV.Radius then
+								if distance < min then
+									min = distance
+									closest = v
+								end
+							end
+						end
+					end
+				end
+			end
+			if game.Players:FindFirstChild(closest.Name) and closest.Character ~= nil and closest.Character:FindFirstChild("Humanoid") ~= nil and closest.Character:FindFirstChild("HumanoidRootPart") ~= nil and closest.Name ~= plr.Name  and closest.Character.Humanoid.Health > 0 then
+				camera.CFrame = CFrame.new(camera.CFrame.Position, closest.Character[LOCKON].CFrame.Position)
+			end
+		end
+	end)
+end)
+
+TextButton4.Name = "TextButton4"
+TextButton4.Parent = InsideContainer
+TextButton4.BackgroundColor3 = Color3.fromRGB(91, 91, 91)
+TextButton4.BorderColor3 = Color3.fromRGB(23, 255, 50)
+TextButton4.Size = UDim2.new(0, 200, 0, 50)
+TextButton4.Font = Enum.Font.SourceSans
+TextButton4.Text = "Infinite Yield"
+TextButton4.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextButton4.TextSize = 20.000
+TextButton4.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+Toggle.Name = "Toggle"
+Toggle.Parent = InsideContainer
+Toggle.BackgroundColor3 = Color3.fromRGB(91, 91, 91)
+Toggle.BorderColor3 = Color3.fromRGB(23, 255, 50)
+Toggle.Size = UDim2.new(0, 200, 0, 50)
+Toggle.Font = Enum.Font.SourceSans
+Toggle.Text = "Toggle Noclip"
+Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
+Toggle.TextSize = 20.000
+Toggle.TextXAlignment = Enum.TextXAlignment.Left
+
+ToggleBackground.Name = "ToggleBackground"
+ToggleBackground.Parent = Toggle
+ToggleBackground.BackgroundColor3 = Color3.fromRGB(59, 59, 59)
+ToggleBackground.Position = UDim2.new(0.728571415, 0, 0.200000003, 0)
+ToggleBackground.Size = UDim2.new(0, 31, 0, 25)
+ToggleBackground.Font = Enum.Font.SourceSans
+ToggleBackground.Text = ""
+ToggleBackground.TextColor3 = Color3.fromRGB(0, 0, 0)
+ToggleBackground.TextSize = 14.000
+
+ToggleButton.Name = "ToggleButton"
+ToggleButton.Parent = ToggleBackground
+ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleButton.BorderSizePixel = 0
+ToggleButton.Position = UDim2.new(5.96046448e-08, 0, 0, 0)
+ToggleButton.Size = UDim2.new(0, 14, 0, 25)
+ToggleButton.Font = Enum.Font.SourceSans
+ToggleButton.Text = ""
+ToggleButton.TextColor3 = Color3.fromRGB(0, 0, 0)
+ToggleButton.TextSize = 14.000
+noclip = false
+game:GetService('RunService').Stepped:connect(function()
+if noclip then
+game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+end
+end)
+ToggleButton.MouseButton1Down:Connect(function()
+    noclip = not noclip
+	if toggled == false then
+		toggled = true
+		ToggleButton:TweenPosition(UDim2.new(0.548, 0,0, 0), "InOut", "Linear", 0.1)
+		ToggleButton.BackgroundColor3 = Color3.fromRGB(77, 202, 82)
+		print("true") -- Script Here
+	else
+		toggled = false
+		ToggleButton:TweenPosition(UDim2.new(0, 0,0, 0), "InOut", "Linear", 0.1)
+		ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		print("false") -- Script Here
+	end
+end)
+
+ToggleMenu.Name = "ToggleMenu"
+ToggleMenu.Parent = Container
+ToggleMenu.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ToggleMenu.BackgroundTransparency = 1.000
+ToggleMenu.Position = UDim2.new(0.9447155, 0, -0.00338983047, 0)
+ToggleMenu.Size = UDim2.new(0, 20, 0, 50)
+ToggleMenu.Font = Enum.Font.SourceSans
+ToggleMenu.Text = "V"
+ToggleMenu.TextColor3 = Color3.fromRGB(255, 255, 255)
+ToggleMenu.TextSize = 35.000
+ToggleMenu.TextWrapped = true
+ToggleMenu.MouseButton1Down:connect(function()
+	if toggled then
+		toggled = true
+		Container:TweenSize(UDim2.new(0, 615,0, 295), "InOut", "Linear", 0.1)
+		InsideContainer.Visible = true
+		ToggleMenu.Rotation = 180
+	else
+		toggled = false
+        Container:TweenSize(UDim2.new(0, 615,0, 52), "InOut", "Linear", 0.1)
+		InsideContainer.Visible = false
+		ToggleMenu.Rotation = 0
+	end
+end)
+
+DestroyMenu.Name = "DestroyMenu"
+DestroyMenu.Parent = Container
+DestroyMenu.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+DestroyMenu.BackgroundTransparency = 1.000
+DestroyMenu.Position = UDim2.new(0.895934999, 0, 0, 0)
+DestroyMenu.Size = UDim2.new(0, 30, 0, 50)
+DestroyMenu.Font = Enum.Font.SourceSans
+DestroyMenu.Text = "X"
+DestroyMenu.TextColor3 = Color3.fromRGB(255, 255, 255)
+DestroyMenu.TextSize = 35.000
+DestroyMenu.TextWrapped = true
+DestroyMenu.MouseButton1Down:Connect(function()
+	Container:TweenSize(UDim2.new(0, 615,0, 2), "InOut", "Linear", 0.1)
+	wait(.1)
+	Container.Visible = false
+	game.CoreGui.Universal:Destroy()
+end)
