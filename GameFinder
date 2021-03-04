@@ -9,7 +9,7 @@ if game.PlaceId == 3431407618 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/Mayhem/main/ILostMySanity"))()
             
 elseif game.PlaceId == 876052679 then
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/MetallityUI/main/RobberGUI", true))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/MetallityUI/main/RobberGUI"))()
 else
     game.Players.LocalPlayer:Kick("Bruh")
 end
