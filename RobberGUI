@@ -1,6 +1,6 @@
 game.StarterGui:SetCore("SendNotification", {
     Title = "Mentallity Hub"; -- the title (ofc)
-    Text =  "!!Loaded!!";
+    Text =  "Loaded GUI";
     Duration = 5;
 })
 
