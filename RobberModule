@@ -108,7 +108,7 @@ section1:addButton("Load Aimbot", function()
     end)
 end)
 
-section1:addButton("Noclip(V)", functio()
+section1:addButton("Noclip(V)", function()
     game:getService("RunService"):BindToRenderStep("",0,function()
     if not game.Players.LocalPlayer.Character:findFirstChildOfClass("Humanoid") then return end
     if game:getService("UserInputService"):IsKeyDown(Enum.KeyCode.V) then
