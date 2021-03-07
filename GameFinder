@@ -1,13 +1,20 @@
 if game.PlaceId == 3431407618 then
-    loadstring(game:HttpGet("https://pastebin.com/raw/7P5exmqA"))()
-            
-    game.StarterGui:SetCore("SendNotification", {
-    Title = "Sanity: Project-Mayhem";
-    Text =  "By Menace#1337 on Discord.  ";
-    Duration = 5;
-    })
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/Mayhem/main/ILostMySanity"))()
-            
+        if (game.PlaceId == 3431407618)
+        then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/Mayhem/main/LoadingMayhem"))()
+
+        game.StarterGui:SetCore("SendNotification", {
+        Title = "Sanity: Project-Mayhem";
+        Text =  "By Menace#1337 on Discord.  ";
+        Duration = 5;
+        })
+
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/Mayhem/main/ILostMySanity"))()
+
+        else
+            local GameID = game.PlaceId
+            game.Players.LocalPlayer:Kick("Game ID = ".. GameID.." and not 3431407618")
+        end
 elseif game.PlaceId == 876052679 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/MetallityUI/main/RobberModule"))()
 else
