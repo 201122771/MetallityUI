@@ -1,6 +1,5 @@
 if game.PlaceId == 3431407618 then
-        if (game.PlaceId == 3431407618)
-        then
+
         loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/Mayhem/main/LoadingMayhem"))()
 
         game.StarterGui:SetCore("SendNotification", {
@@ -11,10 +10,6 @@ if game.PlaceId == 3431407618 then
 
         loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/Mayhem/main/ILostMySanity"))()
 
-        else
-            local GameID = game.PlaceId
-            game.Players.LocalPlayer:Kick("Game ID = ".. GameID.." and not 3431407618")
-        end
 elseif game.PlaceId == 876052679 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/MetallityUI/main/RobberModule"))()
 else
