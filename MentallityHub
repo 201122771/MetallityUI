@@ -1,0 +1,231 @@
+local str = [[
+
+|--------------------------------------------------|
+|    __  ___           __        _____ __          |
+|   /  |/  /__  ____  / /_____ _/ / (_) /___  __   |
+|  / /|_/ / _ \/ __ \/ __/ __ `/ / / / __/ / / /   |
+| / /  / /  __/ / / / /_/ /_/ / / / / /_/ /_/ /    |
+|/_/  /_/\___/_/ /_/\__/\__,_/_/_/_/\__/\__, /     |
+|                                      /____/      |
+|    by Menace#1337  ~  Revolutionist's Weapon :3  |
+|                v2.9.1                            |
+|--------------------------------------------------|
+]]
+print(str)
+
+local Whitelist = Instance.new("ScreenGui")
+local Module = Instance.new("Frame")
+local Title = Instance.new("TextLabel")
+local InputText = Instance.new("TextBox")
+local SubmitButton = Instance.new("TextLabel")
+local UIGradient = Instance.new("UIGradient")
+local MainButton = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
+
+Whitelist.Name = "Whitelist"
+Whitelist.Parent = game.CoreGui
+Whitelist.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Module.Name = "Module"
+Module.Parent = Whitelist
+Module.BackgroundColor3 = Color3.fromRGB(65, 65, 65)
+Module.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Module.ClipsDescendants = true
+Module.Position = UDim2.new(0.344231963, 0, 0.368852466, 0)
+Module.Size = UDim2.new(0, 504,0, 1)
+
+Title.Name = "Title"
+Title.Parent = Module
+Title.BackgroundColor3 = Color3.fromRGB(50, 50, 50)
+Title.BorderColor3 = Color3.fromRGB(255, 255, 255)
+Title.Size = UDim2.new(0, 504, 0, 52)
+Title.Font = Enum.Font.SourceSans
+Title.Text = "Mentallity; Whitelist Module"
+Title.TextColor3 = Color3.fromRGB(255, 255, 255)
+Title.TextSize = 40.000
+Title.TextWrapped = true
+
+InputText.Name = "InputText"
+InputText.Parent = Module
+InputText.BackgroundColor3 = Color3.fromRGB(24, 24, 24)
+InputText.Position = UDim2.new(0.0476190485, 0, 0.316394418, 0)
+InputText.Size = UDim2.new(0, 456, 0, 34)
+InputText.Font = Enum.Font.SourceSans
+InputText.Text = ""
+InputText.TextColor3 = Color3.fromRGB(255, 255, 255)
+InputText.TextSize = 14.000
+
+SubmitButton.Name = "SubmitButton"
+SubmitButton.Parent = Module
+SubmitButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+SubmitButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
+SubmitButton.Position = UDim2.new(0.319000006, 0, 0.600000024, 0)
+SubmitButton.Size = UDim2.new(0, 182, 0, 41)
+SubmitButton.Font = Enum.Font.SourceSans
+SubmitButton.Text = ""
+SubmitButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+SubmitButton.TextSize = 40.000
+SubmitButton.TextWrapped = true
+
+UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(37, 163, 130)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(240, 208, 65))}
+UIGradient.Parent = SubmitButton
+
+MainButton.Name = "MainButton"
+MainButton.Parent = SubmitButton
+MainButton.BackgroundColor3 = Color3.fromRGB(250, 250, 250)
+MainButton.BackgroundTransparency = 1.000
+MainButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
+MainButton.BorderSizePixel = 0
+MainButton.Position = UDim2.new(0.000318676233, 0, -0.00975608826, 0)
+MainButton.Size = UDim2.new(0, 182, 0, 41)
+MainButton.Font = Enum.Font.SourceSans
+MainButton.Text = "Submit Key"
+MainButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+MainButton.TextSize = 30.000
+MainButton.MouseButton1Down:Connect(function()
+    _G.key = game.CoreGui.Whitelist.Module.InputText.Text
+    
+    local whitelistcheck = loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/fgfhgfgfgfgfsggafgsag/main/keys", true))()
+    
+    if whitelistcheck[_G.key] then
+        Module:TweenSize(UDim2.new(0, 504,0, 0), "InOut", "Linear", 0.1)
+		wait(.1)
+		Module.Visible = false
+		game.CoreGui.Whitelist:Destroy()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/MetallityUI/main/GameFinder"))()
+    else 
+        game:GetService("Players").LocalPlayer:Kick("Not Whitelisted!")
+    end
+end)
+
+UICorner.CornerRadius = UDim.new(0, 4)
+UICorner.Parent = MainButton
+
+UICorner_2.CornerRadius = UDim.new(0, 4)
+UICorner_2.Parent = SubmitButton
+
+Module:TweenSize(UDim2.new(0, 504,0, 224), "InOut", "Linear", 0.1)
+
+while true do
+	Module.BorderColor3 = Color3.new(1,0,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(1,0.1,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(1,0.2,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(1,0.3,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(1,0.4,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(1,0.5,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(1,0.6,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(1,0.7,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(1,0.8,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(1,0.9,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(1,1,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0.9,1,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0.8,1,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0.7,1,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0.6,1,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0.5,1,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0.4,1,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0.3,1,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0.2,1,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0.1,1,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,1,0)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,1,0.1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,1,0.2)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,1,0.3)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,1,0.4)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,1,0.5)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,1,0.6)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,1,0.7)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,1,0.8)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,1,0.9)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,1,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,0.9,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,0.8,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,0.7,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,0.6,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,0.5,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,0.4,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,0.3,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,0.2,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,0.1,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0,0,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0.1,0,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0.2,0,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0.3,0,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0.4,0,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0.5,0,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0.6,0,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0.7,0,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0.8,0,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(0.9,0,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(1,0,1)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(1,0,0.9)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(1,0,0.8)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(1,0,0.7)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(1,0,0.6)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(1,0,0.5)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(1,0,0.4)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(1,0,0.3)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(1,0,0.2)
+	wait(0.01)
+	Module.BorderColor3 = Color3.new(1,0,0.1)
+	wait(0.01)
+end
