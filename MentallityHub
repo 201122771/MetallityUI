@@ -214,3 +214,18 @@ while true do
 	Module.BorderColor3 = Color3.new(1,0,0.1)
 	wait(0.01)
 end
+
+local str = [[
+
+    __  ___           __        _____ __       
+   /  |/  /__  ____  / /_____ _/ / (_) /___  __
+  / /|_/ / _ \/ __ \/ __/ __ `/ / / / __/ / / /
+ / /  / /  __/ / / / /_/ /_/ / / / / /_/ /_/ / 
+/_/  /_/\___/_/ /_/\__/\__,_/_/_/_/\__/\__, /  
+                                      /____/   
+        by Menace#1337  ~  Revolutionist's Weapon :3
+                    v2.9.1
+                    
+            Connected as //IVORY-MIND//
+]]
+print(str)
