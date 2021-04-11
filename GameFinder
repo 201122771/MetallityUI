@@ -12,6 +12,8 @@ if game.PlaceId == 3431407618 then
 
 elseif game.PlaceId == 876052679 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/MetallityUI/main/RobberModule"))()
+elseif game.PlaceId == 142823291 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/Zodiac/main/Zodiac_Hub"))()
 else
     loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/MetallityUI/main/UniversalModule"))()
 end
