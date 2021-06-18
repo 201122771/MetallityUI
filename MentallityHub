@@ -57,10 +57,12 @@ ConfirmKey.MouseButton1Down:Connect(function()
 	LoginKey.TextEditable = false
 	
 	LoginKey.Text = "Checking Whitelist..."
+	LoginKey.PlaceholderText = "Checking Whitelist..."
 	
 	wait(2)
 	
 	LoginKey.Text = "Getting HWID..."
+	LoginKey.PlaceholderText = "Getting HWID..."
 
 	wait(2)
 
