@@ -223,14 +223,15 @@ ToggleMenu.TextSize = 35.000
 ToggleMenu.TextWrapped = true
 ToggleMenu.MouseButton1Down:connect(function()
 	if toggled then
-		toggled = true
-		Container:TweenSize(UDim2.new(0, 615,0, 295), "InOut", "Linear", 0.1)
-		InsideContainer.Visible = true
-		ToggleMenu.Rotation = 180
-	else
 		toggled = false
         Container:TweenSize(UDim2.new(0, 615,0, 52), "InOut", "Linear", 0.1)
 		InsideContainer.Visible = false
+		ToggleMenu.Rotation = 180
+	else
+		toggled = true
+		Container:TweenSize(UDim2.new(0, 615,0, 295), "InOut", "Linear", 0.1)
+		wait(.025)
+		InsideContainer.Visible = true
 		ToggleMenu.Rotation = 0
 	end
 end)
@@ -248,6 +249,7 @@ DestroyMenu.TextSize = 35.000
 DestroyMenu.TextWrapped = true
 DestroyMenu.MouseButton1Down:Connect(function()
 	Container:TweenSize(UDim2.new(0, 615,0, 2), "InOut", "Linear", 0.1)
+	InsideContainer.Visible = false
 	wait(.1)
 	Container.Visible = false
 	game.CoreGui.Universal:Destroy()
