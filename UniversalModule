@@ -1,94 +1,161 @@
+-- Instances:
+
+local RobloxAdminPanel = Instance.new("ScreenGui")
+local MainContainer = Instance.new("Frame")
+local InsideContainer = Instance.new("Frame")
+local TItle = Instance.new("TextLabel")
+local Frame = Instance.new("Frame")
+local CreditsButton = Instance.new("TextButton")
+local CreditsPage = Instance.new("Frame")
+local Desc = Instance.new("TextLabel")
+local CheatsButton = Instance.new("TextButton")
+local CheatsPage = Instance.new("Frame")
+local IYButton = Instance.new("TextButton")
+local Aimbot = Instance.new("TextButton")
+local ESP = Instance.new("TextButton")
+local Noclip = Instance.new("TextLabel")
+local NoclipToggle = Instance.new("TextButton")
+local UICorner = Instance.new("UICorner")
+
 local toggled = false
 local player = game.Players.LocalPlayer
 local mouse = player:GetMouse()
 noclip = false
 
-local Universal = Instance.new("ScreenGui")
-local Container = Instance.new("Frame")
-local TextLabel = Instance.new("TextLabel")
-local account_box = Instance.new("ImageButton")
-local UIGradient = Instance.new("UIGradient")
-local InsideContainer = Instance.new("Frame")
-local TextButton1 = Instance.new("TextButton")
-local UIGridLayout = Instance.new("UIGridLayout")
-local TextButton2 = Instance.new("TextButton")
-local TextButton4 = Instance.new("TextButton")
-local Toggle = Instance.new("TextLabel")
-local ToggleBackground = Instance.new("TextButton")
-local ToggleButton = Instance.new("TextButton")
-local ToggleMenu = Instance.new("TextButton")
-local DestroyMenu = Instance.new("TextButton")
+--Properties:
 
-Universal.Name = "Universal"
-Universal.Parent = game.CoreGui
-Universal.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+RobloxAdminPanel.Name = "RobloxAdminPanel"
+RobloxAdminPanel.Parent = game.CoreGui
+RobloxAdminPanel.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-Container.Name = "Container"
-Container.Parent = Universal
-Container.BackgroundColor3 = Color3.fromRGB(74, 74, 74)
-Container.BorderColor3 = Color3.fromRGB(23, 255, 50)
-Container.Position = UDim2.new(0.0154226031, 0, 0.326697886, 0)
-Container.Size = UDim2.new(0, 615, 0, 295)
-Container.Active = true
-Container.Draggable = true
-
-TextLabel.Parent = Container
-TextLabel.BackgroundColor3 = Color3.fromRGB(59, 59, 59)
-TextLabel.BorderColor3 = Color3.fromRGB(23, 255, 50)
-TextLabel.Size = UDim2.new(0, 615, 0, 50)
-TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "Mentallity; Universal GUI"
-TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.TextSize = 30.000
-
-account_box.Name = "account_box"
-account_box.Parent = TextLabel
-account_box.BackgroundTransparency = 1.000
-account_box.LayoutOrder = 4
-account_box.Position = UDim2.new(0.0104913674, 0, 0.113723665, 0)
-account_box.Size = UDim2.new(0, 39, 0, 38)
-account_box.ZIndex = 2
-account_box.Image = "rbxassetid://3926307971"
-account_box.ImageRectOffset = Vector2.new(124, 44)
-account_box.ImageRectSize = Vector2.new(36, 36)
-
-UIGradient.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(30, 209, 114)), ColorSequenceKeypoint.new(0.58, Color3.fromRGB(137, 208, 88)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(240, 208, 65))}
-UIGradient.Parent = account_box
+MainContainer.Name = "MainContainer"
+MainContainer.Parent = RobloxAdminPanel
+MainContainer.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+MainContainer.BorderSizePixel = 0
+MainContainer.Position = UDim2.new(0.0389851481, 0, 0.297423899, 0)
+MainContainer.Size = UDim2.new(0, 250,0, 2)
+MainContainer.ClipsDescendants = true
+MainContainer.Active = true
+MainContainer.Draggable = true
 
 InsideContainer.Name = "InsideContainer"
-InsideContainer.Parent = Container
-InsideContainer.BackgroundColor3 = Color3.fromRGB(48, 48, 48)
-InsideContainer.BackgroundTransparency = 1.000
-InsideContainer.Position = UDim2.new(0.00975608546, 0, 0.203389823, 0)
-InsideContainer.Size = UDim2.new(0, 602, 0, 227)
+InsideContainer.Parent = MainContainer
+InsideContainer.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+InsideContainer.BorderSizePixel = 0
+InsideContainer.Position = UDim2.new(0.0560000017, 0, 0.0397727266, 0)
+InsideContainer.Size = UDim2.new(0, 222, 0, 324)
 
-TextButton1.Name = "TextButton1"
-TextButton1.Parent = InsideContainer
-TextButton1.BackgroundColor3 = Color3.fromRGB(91, 91, 91)
-TextButton1.BorderColor3 = Color3.fromRGB(23, 255, 50)
-TextButton1.Size = UDim2.new(0, 200, 0, 50)
-TextButton1.Font = Enum.Font.SourceSans
-TextButton1.Text = "Load ESP"
-TextButton1.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextButton1.TextSize = 20.000
-TextButton1.MouseButton1Down:Connect(function()
-	loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/MetallityUI/main/Main%20ESP"))()
+TItle.Name = "TItle"
+TItle.Parent = InsideContainer
+TItle.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TItle.BackgroundTransparency = 1.000
+TItle.BorderSizePixel = 0
+TItle.Position = UDim2.new(0.0495495498, 0, 0, 0)
+TItle.Size = UDim2.new(0, 200, 0, 41)
+TItle.Font = Enum.Font.Ubuntu
+TItle.Text = "INSANITY"
+TItle.TextColor3 = Color3.fromRGB(255, 255, 255)
+TItle.TextScaled = true
+TItle.TextSize = 14.000
+TItle.TextWrapped = true
+
+Frame.Parent = TItle
+Frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Frame.Position = UDim2.new(0.25, 0, 1, 0)
+Frame.Size = UDim2.new(0, 100, 0, 2)
+
+CreditsButton.Name = "CreditsButton"
+CreditsButton.Parent = InsideContainer
+CreditsButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+CreditsButton.BorderSizePixel = 0
+CreditsButton.Position = UDim2.new(0.543513477, 0, 0.175952792, 0)
+CreditsButton.Size = UDim2.new(0, 56, 0, 22)
+CreditsButton.Font = Enum.Font.SourceSans
+CreditsButton.Text = "Credits"
+CreditsButton.TextColor3 = Color3.fromRGB(178, 178, 178)
+CreditsButton.TextSize = 14.000
+CreditsButton.MouseButton1Down:Connect(function()
+	if CheatsPage.Visible == true then
+		CheatsPage.Visible = false
+		CreditsPage.Visible = true
+	end
 end)
 
-UIGridLayout.Parent = InsideContainer
-UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIGridLayout.CellSize = UDim2.new(0, 140, 0, 40)
+CreditsPage.Name = "CreditsPage"
+CreditsPage.Parent = CreditsButton
+CreditsPage.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+CreditsPage.BorderSizePixel = 0
+CreditsPage.ClipsDescendants = true
+CreditsPage.Position = UDim2.new(-1.9683075, 0, 1.02890015, 0)
+CreditsPage.Size = UDim2.new(0, 200, 0, 230)
+CreditsPage.Visible = false
 
-TextButton2.Name = "TextButton2"
-TextButton2.Parent = InsideContainer
-TextButton2.BackgroundColor3 = Color3.fromRGB(91, 91, 91)
-TextButton2.BorderColor3 = Color3.fromRGB(23, 255, 50)
-TextButton2.Size = UDim2.new(0, 200, 0, 50)
-TextButton2.Font = Enum.Font.SourceSans
-TextButton2.Text = "Aimbot"
-TextButton2.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextButton2.TextSize = 20.000
-TextButton2.MouseButton1Down:Connect(function()
+Desc.Name = "Desc"
+Desc.Parent = CreditsPage
+Desc.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Desc.BackgroundTransparency = 1.000
+Desc.BorderColor3 = Color3.fromRGB(27, 42, 53)
+Desc.BorderSizePixel = 0
+Desc.Position = UDim2.new(0.0350000001, 0, 0.0565217398, 0)
+Desc.Size = UDim2.new(0, 186, 0, 205)
+Desc.Font = Enum.Font.Ubuntu
+Desc.Text = "Credits to Menace#1101 for UI and Scripting\\n\\nCredits to Menace#1101 for the Idea"
+Desc.TextColor3 = Color3.fromRGB(255, 255, 255)
+Desc.TextSize = 13.000
+Desc.TextWrapped = true
+Desc.TextXAlignment = Enum.TextXAlignment.Left
+Desc.TextYAlignment = Enum.TextYAlignment.Top
+
+CheatsButton.Name = "CheatsButton"
+CheatsButton.Parent = InsideContainer
+CheatsButton.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+CheatsButton.BorderSizePixel = 0
+CheatsButton.Position = UDim2.new(0.203513518, 0, 0.175952792, 0)
+CheatsButton.Size = UDim2.new(0, 56, 0, 22)
+CheatsButton.Font = Enum.Font.SourceSans
+CheatsButton.Text = "Cheats"
+CheatsButton.TextColor3 = Color3.fromRGB(178, 178, 178)
+CheatsButton.TextSize = 14.000
+CheatsButton.MouseButton1Down:Connect(function()
+	if CreditsPage.Visible == true then
+		CreditsPage.Visible = false
+		CheatsPage.Visible = true
+	end
+end)
+
+CheatsPage.Name = "CheatsPage"
+CheatsPage.Parent = CheatsButton
+CheatsPage.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+CheatsPage.BorderSizePixel = 0
+CheatsPage.ClipsDescendants = true
+CheatsPage.Position = UDim2.new(-0.611164629, 0, 1, 0)
+CheatsPage.Size = UDim2.new(0, 200, 0, 230)
+
+IYButton.Name = "IY Button"
+IYButton.Parent = CheatsPage
+IYButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+IYButton.BorderSizePixel = 0
+IYButton.Position = UDim2.new(0.155226126, 0, 0.0913043469, 0)
+IYButton.Size = UDim2.new(0, 137, 0, 34)
+IYButton.Font = Enum.Font.Ubuntu
+IYButton.Text = "Infinite Yield"
+IYButton.TextColor3 = Color3.fromRGB(178, 178, 178)
+IYButton.TextSize = 14.000
+IYButton.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+end)
+
+Aimbot.Name = "Aimbot"
+Aimbot.Parent = CheatsPage
+Aimbot.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Aimbot.BorderSizePixel = 0
+Aimbot.Position = UDim2.new(0.155226126, 0, 0.326086938, 0)
+Aimbot.Size = UDim2.new(0, 137, 0, 34)
+Aimbot.Font = Enum.Font.Ubuntu
+Aimbot.Text = "Aimbot"
+Aimbot.TextColor3 = Color3.fromRGB(178, 178, 178)
+Aimbot.TextSize = 14.000
+Aimbot.MouseButton1Down:Connect(function()
 	local plr = game.Players.LocalPlayer
 	local camera = game.Workspace.CurrentCamera
 	local UIS = game.UserInputService
@@ -145,112 +212,63 @@ TextButton2.MouseButton1Down:Connect(function()
 	end)
 end)
 
-TextButton4.Name = "TextButton4"
-TextButton4.Parent = InsideContainer
-TextButton4.BackgroundColor3 = Color3.fromRGB(91, 91, 91)
-TextButton4.BorderColor3 = Color3.fromRGB(23, 255, 50)
-TextButton4.Size = UDim2.new(0, 200, 0, 50)
-TextButton4.Font = Enum.Font.SourceSans
-TextButton4.Text = "Infinite Yield"
-TextButton4.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextButton4.TextSize = 20.000
-TextButton4.MouseButton1Down:Connect(function()
-	loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+ESP.Name = "ESP"
+ESP.Parent = CheatsPage
+ESP.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+ESP.BorderSizePixel = 0
+ESP.Position = UDim2.new(0.155226126, 0, 0.565217376, 0)
+ESP.Size = UDim2.new(0, 137, 0, 34)
+ESP.Font = Enum.Font.Ubuntu
+ESP.Text = "ESP"
+ESP.TextColor3 = Color3.fromRGB(178, 178, 178)
+ESP.TextSize = 14.000
+ESP.MouseButton1Down:Connect(function()
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/MetallityUI/main/Main%20ESP"))()
 end)
 
-Toggle.Name = "Toggle"
-Toggle.Parent = InsideContainer
-Toggle.BackgroundColor3 = Color3.fromRGB(91, 91, 91)
-Toggle.BorderColor3 = Color3.fromRGB(23, 255, 50)
-Toggle.Size = UDim2.new(0, 200, 0, 50)
-Toggle.Font = Enum.Font.SourceSans
-Toggle.Text = "Toggle Noclip"
-Toggle.TextColor3 = Color3.fromRGB(255, 255, 255)
-Toggle.TextSize = 20.000
-Toggle.TextXAlignment = Enum.TextXAlignment.Left
+Noclip.Name = "Noclip"
+Noclip.Parent = CheatsPage
+Noclip.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
+Noclip.BorderSizePixel = 0
+Noclip.Position = UDim2.new(0.171126097, 0, 0.791304231, 0)
+Noclip.Size = UDim2.new(0, 131, 0, 34)
+Noclip.Font = Enum.Font.Ubuntu
+Noclip.Text = "     Noclip"
+Noclip.TextColor3 = Color3.fromRGB(178, 178, 178)
+Noclip.TextSize = 20.000
+Noclip.TextWrapped = true
+Noclip.TextXAlignment = Enum.TextXAlignment.Left
 
-ToggleBackground.Name = "ToggleBackground"
-ToggleBackground.Parent = Toggle
-ToggleBackground.BackgroundColor3 = Color3.fromRGB(59, 59, 59)
-ToggleBackground.Position = UDim2.new(0.728571415, 0, 0.200000003, 0)
-ToggleBackground.Size = UDim2.new(0, 31, 0, 25)
-ToggleBackground.Font = Enum.Font.SourceSans
-ToggleBackground.Text = ""
-ToggleBackground.TextColor3 = Color3.fromRGB(0, 0, 0)
-ToggleBackground.TextSize = 14.000
-
-ToggleButton.Name = "ToggleButton"
-ToggleButton.Parent = ToggleBackground
-ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ToggleButton.BorderSizePixel = 0
-ToggleButton.Position = UDim2.new(5.96046448e-08, 0, 0, 0)
-ToggleButton.Size = UDim2.new(0, 14, 0, 25)
-ToggleButton.Font = Enum.Font.SourceSans
-ToggleButton.Text = ""
-ToggleButton.TextColor3 = Color3.fromRGB(0, 0, 0)
-ToggleButton.TextSize = 14.000
+NoclipToggle.Name = "NoclipToggle"
+NoclipToggle.Parent = Noclip
+NoclipToggle.BackgroundColor3 = Color3.fromRGB(255, 32, 32)
+NoclipToggle.BorderSizePixel = 0
+NoclipToggle.Position = UDim2.new(0.705801547, 0, 0.176470593, 0)
+NoclipToggle.Size = UDim2.new(0, 22, 0, 22)
+NoclipToggle.Font = Enum.Font.SourceSans
+NoclipToggle.Text = ""
+NoclipToggle.TextColor3 = Color3.fromRGB(0, 0, 0)
+NoclipToggle.TextSize = 14.000
 noclip = false
 game:GetService('RunService').Stepped:connect(function()
-if noclip then
-game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
-end
+	if noclip then
+		game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+	end
 end)
-ToggleButton.MouseButton1Down:Connect(function()
-    noclip = not noclip
+NoclipToggle.MouseButton1Down:Connect(function()
+	noclip = not noclip
 	if toggled == false then
 		toggled = true
-		ToggleButton:TweenPosition(UDim2.new(0.548, 0,0, 0), "InOut", "Linear", 0.1)
-		ToggleButton.BackgroundColor3 = Color3.fromRGB(77, 202, 82)
+		NoclipToggle.BackgroundColor3 = Color3.fromRGB(77, 202, 82)
 		print("true") -- Script Here
 	else
 		toggled = false
-		ToggleButton:TweenPosition(UDim2.new(0, 0,0, 0), "InOut", "Linear", 0.1)
-		ToggleButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+		NoclipToggle.BackgroundColor3 = Color3.fromRGB(255, 32, 32)
 		print("false") -- Script Here
 	end
 end)
 
-ToggleMenu.Name = "ToggleMenu"
-ToggleMenu.Parent = Container
-ToggleMenu.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ToggleMenu.BackgroundTransparency = 1.000
-ToggleMenu.Position = UDim2.new(0.9447155, 0, -0.00338983047, 0)
-ToggleMenu.Size = UDim2.new(0, 20, 0, 50)
-ToggleMenu.Font = Enum.Font.SourceSans
-ToggleMenu.Text = "V"
-ToggleMenu.TextColor3 = Color3.fromRGB(255, 255, 255)
-ToggleMenu.TextSize = 35.000
-ToggleMenu.TextWrapped = true
-ToggleMenu.MouseButton1Down:connect(function()
-	if toggled then
-		toggled = false
-        Container:TweenSize(UDim2.new(0, 615,0, 52), "InOut", "Linear", 0.1)
-		InsideContainer.Visible = false
-		ToggleMenu.Rotation = 180
-	else
-		toggled = true
-		Container:TweenSize(UDim2.new(0, 615,0, 295), "InOut", "Linear", 0.1)
-		wait(.025)
-		InsideContainer.Visible = true
-		ToggleMenu.Rotation = 0
-	end
-end)
+UICorner.CornerRadius = UDim.new(0, 5)
+UICorner.Parent = NoclipToggle
 
-DestroyMenu.Name = "DestroyMenu"
-DestroyMenu.Parent = Container
-DestroyMenu.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-DestroyMenu.BackgroundTransparency = 1.000
-DestroyMenu.Position = UDim2.new(0.895934999, 0, 0, 0)
-DestroyMenu.Size = UDim2.new(0, 30, 0, 50)
-DestroyMenu.Font = Enum.Font.SourceSans
-DestroyMenu.Text = "X"
-DestroyMenu.TextColor3 = Color3.fromRGB(255, 255, 255)
-DestroyMenu.TextSize = 35.000
-DestroyMenu.TextWrapped = true
-DestroyMenu.MouseButton1Down:Connect(function()
-	Container:TweenSize(UDim2.new(0, 615,0, 2), "InOut", "Linear", 0.1)
-	InsideContainer.Visible = false
-	wait(.1)
-	Container.Visible = false
-	game.CoreGui.Universal:Destroy()
-end)
+MainContainer:TweenSize(UDim2.new(0, 250,0, 352), "InOut", "Linear", 0.1)
