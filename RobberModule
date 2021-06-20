@@ -25,7 +25,7 @@ local NoclipToggled = false
 --Properties:
 
 RobloxAdminPanel.Name = "RobloxAdminPanel"
-RobloxAdminPanel.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+RobloxAdminPanel.Parent = game.CoreGui
 RobloxAdminPanel.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 MainContainer.Name = "MainContainer"
@@ -35,6 +35,8 @@ MainContainer.BorderSizePixel = 0
 MainContainer.ClipsDescendants = true
 MainContainer.Position = UDim2.new(0.422648519, 0, 0.228337243, 0)
 MainContainer.Size = UDim2.new(0, 250, 0, 1)
+MainContainer.Active = true
+MainContainer.Draggable = true
 
 InsideContainer.Name = "InsideContainer"
 InsideContainer.Parent = MainContainer
