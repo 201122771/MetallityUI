@@ -16,7 +16,7 @@ elseif game.PlaceId == 4588604953 then
     
     game.StarterGui:SetCore("SendNotification", {
     Title = "PREDATOR";
-    Text =  "Toggle Keybind: X";
+    Text =  "Toggle Keybind: Z";
     Duration = 5;
     })
 else
