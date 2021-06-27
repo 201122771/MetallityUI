@@ -1,0 +1,24 @@
+if game.PlaceId == 3431407618 then
+        game.StarterGui:SetCore("SendNotification", {
+        Title = "Sanity: Project-Mayhem";
+        Text =  "By Menace#1337 on Discord.  ";
+        Duration = 5;
+        })
+
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/Mayhem/main/ILostMySanity"))()
+
+elseif game.PlaceId == 876052679 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/MetallityUI/main/RobberModule"))()
+elseif game.PlaceId == 142823291 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/Zodiac/main/Zodiac_Hub"))()
+elseif game.PlaceId == 4588604953 then    
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/Criminality/main/Predator"))()
+    
+    game.StarterGui:SetCore("SendNotification", {
+    Title = "PREDATOR";
+    Text =  "Toggle Keybind: Z";
+    Duration = 5;
+    })
+else
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/MetallityUI/main/UniversalModule"))()
+end
