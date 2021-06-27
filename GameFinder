@@ -12,7 +12,7 @@ elseif game.PlaceId == 876052679 then
 elseif game.PlaceId == 142823291 then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/Zodiac/main/Zodiac_Hub"))()
 elseif game.PlaceId == 4588604953 then    
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/Criminality/main/PredatorGUI"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/201122771/Criminality/main/PredatorSCRIPT"))()
     
     game.StarterGui:SetCore("SendNotification", {
     Title = "PREDATOR";
